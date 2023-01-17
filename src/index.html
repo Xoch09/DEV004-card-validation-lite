@@ -4,15 +4,23 @@
 <head>
   <meta charset="utf-8">
   <title>Tarjeta de crédito válida</title>
+
 </head>
 
 <body>
-  <input id="cardnumber"></input>
-  <button onclick="validate()">Validar</button>
+ 
+ 
+  <input type="number" id="cardnumber"  min="1" maxlength="16" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+   <button onclick="validate()">Validar</button>
+
+   
   <div id="result"></div>
+
   <script lang="javascript">
+    //se crea la función de validar y se llama al ID 
     function validate() {
       const valid = isValid(document.getElementById("cardnumber").value)
+     
       if (valid) {
         // Show success in div#result
       }
@@ -22,9 +30,11 @@
     }
 
     function isValid(creditCardNumber){
-      // is creditCardNumber valid?
+      
+            
       return false
     }
+  
   </script>
 </body>
 
