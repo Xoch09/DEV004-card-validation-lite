@@ -1,40 +1,34 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Tarjeta de crédito válida</title>
+  <script defer src="javascript.js">
 
+  </script>
 </head>
 
 <body>
+
+
+
+  <label for="Ingresa tu número">Ingresa los 16 dígitos de tu tarjeta</label>
  
- 
-  <input type="number" id="cardnumber"  min="1" maxlength="16" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-   <button onclick="validate()">Validar</button>
-
-   
-  <div id="result"></div>
-
-  <script lang="javascript">
-    //se crea la función de validar y se llama al ID 
-    function validate() {
-      const valid = isValid(document.getElementById("cardnumber").value)
-     
-      if (valid) {
-        // Show success in div#result
-      }
-      else {
-        // Show error message in div#result
-      }
-    }
-
-    function isValid(creditCardNumber){
-      
-            
-      return false
-    }
+  <input type="number" maxlength="16" min="5"  id="cardnumber" required="" pattern="[0-9]+" placeholder="número de tarjeta" 
+  oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+    
   
+
+<button id="btn-validar">Validar</button>
+<!--div sirve para seccionar-->
+<div id="result"></div>
+<!--Id atributos, no utilizar el mismo nombre para diferentes Id-->
+
+
+  
+ 
+
+  <script src="./javascript.js" type="module">
   </script>
 </body>
 
